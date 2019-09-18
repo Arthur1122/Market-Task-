@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <form asp-controller="Group" asp-action="Add" method="post">
+            <label>Code Number</label>
+            <br />
+            <input type="number" id="GroupCode" name="GroupCode"/> 
+            <br />
+            <label>Name</label>
+            <br />
+            <input type="text" id="GroupName" name="GroupName"/>
+            <br />
+            <label>Selest color</label>
+            <br />
+            <select id="GroupColor" name="GroupColor">
+                <option value="#0000FF">blue</option>
+                <option value="#FF0000">red</option>
+                <option value="#00FF00">green</option>
+                <option value="#FFFF00">yellow</option>
+            </select>
+            <br />
+            <button><a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="Index">Cancel</a></button>
+            <button type="submit">Save</button> 
+        </form>
+    </body>
+</html>

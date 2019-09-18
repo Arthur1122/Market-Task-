@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form asp-controller="Home" asp-action="Add" method="post">
+        <label>Code Number</label>
+        <br />
+        <input type="number" id="CodeProduct" name="CodeProduct" />
+        <br />
+        <label>Name</label>
+        <br />
+        <input type="text" id="ProductName" name="ProductName" />
+        <br />
+        <label>Selest color</label>
+        <br />
+        <select id="ProductColor" name="ProductColor">
+            <option value="#0000FF">blue</option>
+            <option value="#FF0000">red</option>
+            <option value="#00FF00">green</option>
+            <option value="#FFFF00">yellow</option>
+        </select>
+        <br />
+        <label>Price</label>
+        <br />
+        <input type="number" id="ProductPrice" name="GroupName" />
+        <br />
+        <button><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Cancel</a></button>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

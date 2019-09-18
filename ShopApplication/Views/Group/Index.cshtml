@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ShopApplication.Models.GroupModel>
+@{
+    ViewData["Title"] = "Index";
+ }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <button>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="Add">Add</a></button>
+        <button>Edit</button> 
+        <button><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Close</a></button>
+        
+        <table>
+            <tr>
+                <th>Group id</th>
+                <th>Group code</th>
+                <th>Group name</th>
+            </tr>
+            @foreach (var g in Model)
+            {
+                <tr style="background-color: @g.GroupColor">
+                    <th>@g.GroupId</th>
+                    <th>@g.GroupCode</th>
+                    <th>@g.GroupName</th>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
+
