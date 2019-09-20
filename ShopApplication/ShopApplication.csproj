@@ -5,6 +5,13 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20190918115325_marketMigration.cs" />
+    <Compile Remove="Migrations\20190918115325_marketMigration.Designer.cs" />
+    <Compile Remove="Migrations\20190920073647_MarketMig.cs" />
+    <Compile Remove="Migrations\20190920073647_MarketMig.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />

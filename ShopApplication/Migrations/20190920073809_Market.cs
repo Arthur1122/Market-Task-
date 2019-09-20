@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ShopApplication.Migrations
 {
-    public partial class marketMigration : Migration
+    public partial class Market : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,6 +32,7 @@ namespace ShopApplication.Migrations
                     CodeProduct = table.Column<int>(nullable: false),
                     ProductName = table.Column<string>(nullable: true),
                     ProductPrice = table.Column<int>(nullable: false),
+                    ProductColor = table.Column<string>(nullable: true),
                     GroupId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

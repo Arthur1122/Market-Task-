@@ -7,6 +7,22 @@
 <html>
 <head>
     <title></title>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+            
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            height: 50px;
+            text-align:center;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -18,9 +34,10 @@
 
         <table>
             <tr>
-                <th>Pruduct id</th>
-                <th>Product code</th>
-                <th>Product name</th>
+                <th>Pruduct id </th>
+                <th> Product code </th>
+                <th> Product name </th>
+                <th> Product Price</th>
             </tr>
             @foreach (var g in Model)
             {
@@ -28,6 +45,7 @@
                     <th>@g.ProductId</th>
                     <th>@g.CodeProduct</th>
                     <th>@g.ProductName</th>
+                    <th>@g.ProductPrice $</th>
                 </tr>
             }
         </table>

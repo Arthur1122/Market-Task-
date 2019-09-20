@@ -49,6 +49,28 @@ namespace ShopApplication.Controllers
             }
             
         }
+
+        public ActionResult GetGroup(int id)
+        {
+            var group = _groupRepository.GetGroupById(id);
+            return View(_mapper.Map<GroupModel>(group));
+        }
+
+        [HttpPost]
+        public ActionResult Put([FromForm] GroupModel model)
+        {
+            var groupv = _groupRepository.GetGroupById(model.GroupId);
+            _mapper.Map(model, groupv);
+            _mapper.Map<Group>(groupv);
+            if (_groupRepository.SaveChanges())
+            {
+                return RedirectToAction("Index","Group");
+            }
+            else
+            {
+                return View("Error while saving data to database");
+            }
+        }
     }
 }
 

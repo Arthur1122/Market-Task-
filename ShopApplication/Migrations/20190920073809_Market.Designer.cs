@@ -10,8 +10,8 @@ using ShopApplication.Data;
 namespace ShopApplication.Migrations
 {
     [DbContext(typeof(MarketContext))]
-    [Migration("20190918115325_marketMigration")]
-    partial class marketMigration
+    [Migration("20190920073809_Market")]
+    partial class Market
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,6 +72,8 @@ namespace ShopApplication.Migrations
                     b.Property<int>("CodeProduct");
 
                     b.Property<int?>("GroupId");
+
+                    b.Property<string>("ProductColor");
 
                     b.Property<string>("ProductName");
 

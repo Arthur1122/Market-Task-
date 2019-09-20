@@ -71,6 +71,8 @@ namespace ShopApplication.Migrations
 
                     b.Property<int?>("GroupId");
 
+                    b.Property<string>("ProductColor");
+
                     b.Property<string>("ProductName");
 
                     b.Property<int>("ProductPrice");

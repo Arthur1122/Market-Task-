@@ -7,14 +7,29 @@
 <html>
 <head>
     <title></title>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
     <div>
         <button>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="Add">Add</a></button>
-        <button>Edit</button> 
+            <a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="Add">Add</a>
+        </button>
+        <button> <a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="GetGroup">Edit</a></button>
         <button><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Close</a></button>
-        
+
         <table>
             <tr>
                 <th>Group id</th>
@@ -27,6 +42,9 @@
                     <th>@g.GroupId</th>
                     <th>@g.GroupCode</th>
                     <th>@g.GroupName</th>
+                    <th>
+                        <button> <a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="GetGroup" asp-route-id="@g.GroupId">Edit</a></button>
+                    </th>
                 </tr>
             }
         </table>
