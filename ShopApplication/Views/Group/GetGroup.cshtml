@@ -13,21 +13,15 @@
         <input type="hidden" name="GroupId" value="@Model.GroupId" />
         <label>Code Number</label>
         <br />
-        <input type="number" id="GroupCode" name="GroupCode" value="@Model.GroupCode"  />
+        <input type="number" id="GroupCode" name="GroupCode" value="@Model.GroupCode" />
         <br />
         <label>Name</label>
         <br />
-        <input type="text" id="GroupName" name="GroupName" value="@Model.GroupName"/>
+        <input type="text" id="GroupName" name="GroupName" value="@Model.GroupName" />
         <br />
         <label>Selest color</label>
         <br />
-        <select id="GroupColor" name="GroupColor">
-            
-            <option value="#00FF00" selected="@(Model.GroupColor == "#00FF00" ? "selected" : "")">Lime</option>
-            <option value="#00FFFF" selected="@(Model.GroupColor == "#00FFFF" ? "selected" : "")">Cyan / Aqua</option>
-            <option value="#00FF00" selected="@(Model.GroupColor == "#00FF00" ? "selected" : "")">green</option>
-            <option value="#FFFF00" selected="@(Model.GroupColor == "#FFFF00" ? "selected" : "")">yellow</option>
-        </select>
+        @Html.DropDownListFor(m => m.GroupColor, new SelectList(new List<string> {}), "- Please select -", new { @class = "form-control" })
         <br />
         <button><a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="Index">Cancel</a></button>
         <button type="submit">Save</button>

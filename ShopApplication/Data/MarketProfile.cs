@@ -17,7 +17,6 @@ namespace ShopApplication.Data
                 .ForMember(c => c.ProductName, o => o.MapFrom(m => m.ProductName))
                 .ForMember(c => c.ProductPrice, m => m.MapFrom(n => n.ProductPrice))
                 .ForMember(c => c.CodeProduct, m => m.MapFrom(n => n.CodeProduct))
-                .ForMember(c => c.GroupId, m => m.MapFrom(n => n.Group.GroupId))
                 .ForMember(c => c.ProductColor, m => m.MapFrom(n => n.ProductColor))
                 .ReverseMap();
 
@@ -26,7 +25,6 @@ namespace ShopApplication.Data
                .ForMember(c => c.ProductName, o => o.MapFrom(m => m.ProductName))
                .ForMember(c => c.ProductPrice, m => m.MapFrom(n => n.ProductPrice))
                .ForMember(c => c.CodeProduct, m => m.MapFrom(n => n.CodeProduct))
-               .ForPath(c => c.Group.GroupId, m => m.MapFrom(n => n.GroupId))
                .ForMember(c => c.ProductColor, m => m.MapFrom(n => n.ProductColor))
                .ReverseMap();
 

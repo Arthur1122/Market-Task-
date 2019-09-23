@@ -29,15 +29,15 @@ namespace ShopApplication.Data
 
         public Product[] GetAllProducts()
         {
-            IQueryable<Product> query = _context.Products
-                .Include(c => c.Group);
+            IQueryable<Product> query = _context.Products;
+               
             return query.ToArray();
         }
 
         public Product GetProductById(int id)
         {
-            IQueryable<Product> query = _context.Products
-                .Include(c => c.Group);
+            IQueryable<Product> query = _context.Products;
+               
             query = query.Where(q => q.ProductId == id);
             return query.FirstOrDefault();
         }

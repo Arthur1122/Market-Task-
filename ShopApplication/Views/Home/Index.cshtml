@@ -26,10 +26,7 @@
 </head>
 <body>
     <div>
-        <button>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Add">Add</a>
-        </button>
-        <button>Edit</button>
+        <button> <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Add">Add</a></button>
         <button><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Close</a></button>
 
         <table>
@@ -41,12 +38,16 @@
             </tr>
             @foreach (var g in Model)
             {
-                <tr style="background-color: @g.ProductColor">
-                    <th>@g.ProductId</th>
-                    <th>@g.CodeProduct</th>
-                    <th>@g.ProductName</th>
-                    <th>@g.ProductPrice $</th>
-                </tr>
+        <tr style="background-color: @g.ProductColor">
+            <th>@g.ProductId</th>
+            <th>@g.CodeProduct</th>
+            <th>@g.ProductName</th>
+            <th>@g.ProductPrice $</th>
+            <th>
+                <button> <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GetProduct" asp-route-id="@g.ProductId">Edit</a></button>
+            </th>
+        </tr>
+
             }
         </table>
     </div>

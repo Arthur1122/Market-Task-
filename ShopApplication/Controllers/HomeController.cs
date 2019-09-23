@@ -41,7 +41,30 @@ namespace ShopApplication.Controllers
             _productRepository.Add(group);
             if (_productRepository.SaveChanges())
             {
-                return Ok();
+                return RedirectToAction("Index", "Group");
+
+            }
+            else
+            {
+                return View("Error while saving data to database");
+            }
+
+        }
+
+        public ActionResult GetProduct(int id)
+        {
+            var product = _productRepository.GetProductById(id);
+            return View(_mapper.Map<ProductModel>(product));
+        }
+
+        [HttpPost]
+        public ActionResult Update([FromForm] ProductModel model)
+        {
+            var product = _productRepository.GetProductById(model.ProductId);
+            _mapper.Map(model, product);
+            if (_productRepository.SaveChanges())
+            {
+                return RedirectToAction("Index", "Home");
             }
             else
             {

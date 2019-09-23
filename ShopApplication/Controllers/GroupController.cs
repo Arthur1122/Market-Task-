@@ -41,7 +41,7 @@ namespace ShopApplication.Controllers
             _groupRepository.Add(group);
             if (_groupRepository.SaveChanges())
             {
-                return Ok();
+                return RedirectToAction("Index","Group");
             }
             else         
             {

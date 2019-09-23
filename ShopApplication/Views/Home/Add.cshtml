@@ -8,6 +8,7 @@
     <meta charset="utf-8" />
 </head>
 <body>
+    
     <form asp-controller="Home" asp-action="Add" method="post">
         <label>Code Number</label>
         <br />
@@ -17,14 +18,16 @@
         <br />
         <input type="text" id="ProductName" name="ProductName" />
         <br />
-        <label>Selest color</label>
+        <label>Select color</label>
         <br />
-        <select id="ProductColor" name="ProductColor">
+        <select id="ProductColor" name="ProductColor" required>
+            <option value="">None</option>
             <option value="#00FF00">Lime</option>
             <option value="#00FFFF">Cyan / Aqua</option>
             <option value="#00FF00">green</option>
             <option value="#FFFF00">yellow</option>
         </select>
+        
         <br />
         <label>Price</label>
         <br />
