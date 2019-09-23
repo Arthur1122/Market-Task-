@@ -1,34 +1,29 @@
-﻿
+﻿@using ShopApplication.Helpers
+@model ShopApplication.Models.GroupModel
 @{
     ViewData["Title"] = "Add";
 }
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-    </head>
-    <body>
-        <form asp-controller="Group" asp-action="Add" method="post">
-            <label>Code Number</label>
-            <br />
-            <input type="number" id="GroupCode" name="GroupCode"/> 
-            <br />
-            <label>Name</label>
-            <br />
-            <input type="text" id="GroupName" name="GroupName"/>
-            <br />
-            <label>Select color</label>
-            <br />
-            <select id="GroupColor" name="GroupColor" required>
-                <option value="">None</option>
-                <option value="#00FF00">Lime</option>
-                <option value="#00FFFF">Cyan / Aqua</option>
-                <option value="#00FF00">green</option>
-                <option value="#FFFF00">yellow</option>
-            </select>
-            <br />
-            <button><a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="Index">Cancel</a></button>
-            <button type="submit">Save</button> 
-        </form>
-    </body>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form asp-controller="Group" asp-action="Add" method="post">
+        <label>Code Number</label>
+        <br />
+        <input type="number" id="GroupCode" name="GroupCode" />
+        <br />
+        <label>Name</label>
+        <br />
+        <input type="text" id="GroupName" name="GroupName" />
+        <br />
+        <label>Select color</label>
+        <br />
+        @Html.DropDownListFor(m => m.GroupColor, new SelectList(ColorHelper.ColorList, "Code", "Name"), "None")
+        <br />
+        <button><a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="Index">Cancel</a></button>
+        <button type="submit">Save</button>
+    </form>
+</body>
 </html>

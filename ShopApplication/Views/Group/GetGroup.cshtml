@@ -1,4 +1,5 @@
-﻿@model ShopApplication.Models.GroupModel
+﻿@using ShopApplication.Helpers
+@model ShopApplication.Models.GroupModel
 @{
     ViewData["Title"] = "GetGroup";
 }
@@ -21,7 +22,7 @@
         <br />
         <label>Selest color</label>
         <br />
-        @Html.DropDownListFor(m => m.GroupColor, new SelectList(new List<string> {}), "- Please select -", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.GroupColor, new SelectList(ColorHelper.ColorList, "Code", "Name"), "None")
         <br />
         <button><a class="nav-link text-dark" asp-area="" asp-controller="Group" asp-action="Index">Cancel</a></button>
         <button type="submit">Save</button>
