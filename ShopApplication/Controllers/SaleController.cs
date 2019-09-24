@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using ShopApplication.Data;
+using ShopApplication.Models;
 
 namespace ShopApplication.Controllers
 {
@@ -31,5 +32,13 @@ namespace ShopApplication.Controllers
         {
             return View();
         }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        
+
     }
 }

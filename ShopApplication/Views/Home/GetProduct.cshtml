@@ -1,4 +1,5 @@
 ﻿@model ShopApplication.Models.ProductModel;
+@using ShopApplication.Helpers;
 @{
     ViewData["Title"] = "Update";
 }
@@ -21,13 +22,7 @@
         <br />
         <label>Selest color</label>
         <br />
-        <select id="ProductColor" name="ProductColor">
-
-            <option value="#00FF00" selected="@(Model.ProductColor == "#00FF00" ? "selected" : "")">Lime</option>
-            <option value="#00FFFF" selected="@(Model.ProductColor == "#00FFFF" ? "selected" : "")">Cyan / Aqua</option>
-            <option value="#00FF00" selected="@(Model.ProductColor == "#00FF00" ? "selected" : "")">green</option>
-            <option value="#FFFF00" selected="@(Model.ProductColor == "#FFFF00" ? "selected" : "")">yellow</option>
-        </select>
+        @Html.DropDownListFor(m=>m.ProductColor, new SelectList(ColorHelper.ColorList,"Code","Name"),"None")
         <br />
        
         <label>Price</label>
